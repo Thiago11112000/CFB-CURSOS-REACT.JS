@@ -10,6 +10,7 @@ export default class Carro extends React.Component{
             ligado:true,
             velAtual:0,
         }
+            this.ld=this.ligarDesligar.bind(this)
     }
     ligarDesligar(){
       //  this.state.ligado=true
@@ -42,7 +43,7 @@ render(){
     <p> Modelo:{this.modelo}</p>
     <p> Ligado: {this.state.ligado ? 'Sim' : 'Não'}</p>
     <p> Velocidade: {this.state.velAtual}</p>
-        <button onClick={()=>this.ligarDesligar()}>
+        <button onClick={this.ld}>
            {this.state.ligado? 'Desligar' : 'Ligar'} 
              </button>
              <button onClick={()=>this.acelerar()}>
